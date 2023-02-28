@@ -76,18 +76,6 @@ export default function CardGroup(props: {
                                         key={cardData.id}
                                     />
                                 ))}
-                                {props.data.map((cardData) => (
-                                    <props.card
-                                        post={cardData}
-                                        key={cardData.id}
-                                    />
-                                ))}
-                                {props.data.map((cardData) => (
-                                    <props.card
-                                        post={cardData}
-                                        key={cardData.id}
-                                    />
-                                ))}
                             </div>
                         </div>
                     </div>
