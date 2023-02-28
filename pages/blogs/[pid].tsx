@@ -57,21 +57,7 @@ export default function Post({ data, mdHTML }: postProps) {
     );
 }
 
-export async function getStaticPaths() {
-    // ...
-    return {
-        paths: [
-            {
-                // You can add a cache of posts by getting a list of ids every build
-                params: { pid: "markdown-blog" },
-            },
-        ],
-        // In case a new post is created after the build or we don't implement the cache which we should do since it greatly decreases load speeds
-        fallback: "blocking",
-    };
-}
-
-export async function getStaticProps({ params }: { params: { pid: string } }) {
+export async function getServerSideProps({ params }: { params: { pid: string } }) {
     const docRef = doc(db, "blog", params.pid);
     const docSnap = await getDoc(docRef);
 
